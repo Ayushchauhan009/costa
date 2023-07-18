@@ -187,7 +187,7 @@ body {
     padding: 0px;
     text-align: center;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(0 30px 20px rgba(0, 0, 0, 0.1));
 }
 
 .item-head{
@@ -308,6 +308,7 @@ body {
     background-color: #ffff;
     padding : 20px 80px 120px 80px;
     z-index: 3;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
 }
 
 .experiences h1{
@@ -318,6 +319,26 @@ body {
 .experiences p{
     font-size: 18px;
 }
+
+
+.etinerary{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-top: -4px;
+    justify-content: space-between;
+    
+    padding: 10px 20px;
+    background-color: rgba(1, 113, 163, 1);
+    
+}
+
+.etinerary p{
+    color: #ffff;
+    margin-top: 12px;
+}
+
 
 
 .testimonials{
@@ -342,10 +363,10 @@ body {
 .testimonial{
     margin: 10px 20px;
     border-radius: 5px;
-    padding: 30px;
+    padding: 30px 15px;
 
     background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(10px 0px 15px rgba(0, 0, 0, 0.1));
 }
 
 .testimonial-content{
@@ -360,4 +381,16 @@ body {
 
 .author{
     font-weight: 600;
+}
+
+.controls{
+    display: flex;
+    align-items: center;
+}
+
+
+.controls button{
+    background: transparent;
+    border: none;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
 }

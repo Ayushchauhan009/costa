@@ -11,9 +11,10 @@
 <body>
 
 
-    <div>
-        <div class="slider">
+    <div class="slider">
 
+
+        <div class="slideshow">
             <nav class="navbar">
                 <img src="./images/logo.png" alt="">
                 <ul>
@@ -23,22 +24,19 @@
                     <li><a href="#">Contact us</a></li>
                 </ul>
             </nav>
-            <div class="slideshow">
-                <div class="slide slide1"></div>
-                <div class="slide slide2"></div>
-                <div class="slide slide3"></div>
-                <div class="slide-content">
-                    <h1 class="heading">Discover the magic of the seas</h1>
-                    <p class="para">Set Sail on a Dream Cruise Vacation!</p>
-                    <a class="cta-button" href="#">Book Now</a>
-                </div>
+            <div class="slide slide1"></div>
+            <div class="slide slide2"></div>
+            <div class="slide slide3"></div>
+            <div class="slide-content">
+                <h1 class="heading">Discover the magic of the seas</h1>
+                <p class="para">Set Sail on a Dream Cruise Vacation!</p>
+                <a class="cta-button" href="#">Book Now</a>
             </div>
         </div>
     </div>
-
     <div class="grid">
         <h1>Discover India with Costa Serena</h1>
-        <p>Unleash your wanderlust aboard Costa Serena and explore India's vibrant wonders</p>
+        <p class="tag">Unleash your wanderlust aboard Costa Serena and explore India's vibrant wonders</p>
         <div class="grid-items">
             <div class="item">
                 <img src="./images/item1.png" alt="">
@@ -58,7 +56,7 @@
                     <a href="#">Inquire Now</a>
                 </div>
                 <div class="itinerary">
-                    <p>View Itinerary</p>
+                    <p class="">View Itinerary</p>
                     <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
 
                 </div>
@@ -291,13 +289,14 @@
     </div>
     <div class="about">
         <h1>About Us</h1>
-        <p>At the heart of our company is a passion for adventure, exploration, and the art of hospitality. We strive to
+        <p>At the heart of our company is a passion for adventure, exploration, and the art of hospitality. We
+            strive to
             create unforgettable moments and cherished memories for
-            every traveler who steps on board our ships. With a deep understanding of the unique desires and preferences
+            every traveler who steps on board our ships. With a deep understanding of the unique desires and
+            preferences
             of our guests, we have crafted a collection of carefully.</p>
         <button><img src="./play.png" alt=""></button>
     </div>
-
     <div class="experiences">
         <h1>Costa Experiences</h1>
         <p>At Costa Cruise, we are passionate about creating unforgettable cruise experiences that go beyond the
@@ -365,55 +364,100 @@
             </div>
 
         </div>
-        <div class="testimonials">
-            <h2>Testimonials</h2>
 
-            <div class="testimonial-slider">
 
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <img src="./images/stars.png" alt="">
-                        <p class="quote">“I have always wanted to explore Paris, and
-                            choosing Costa Cruise was the best decision
-                            I made. The itinerary was well-planned,
-                            allowing us to discover the city's hidden
-                            gems and iconic landmarks.”</p>
-                        <p class="author">Riya Kapoor - Mumbai</p>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <img src="./images/stars.png" alt="">
-                        <p class="quote">“I have always wanted to explore Paris, and
-                            choosing Costa Cruise was the best decision
-                            I made. The itinerary was well-planned,
-                            allowing us to discover the city's hidden
-                            gems and iconic landmarks.”</p>
-                        <p class="author">Riya Kapoor - Mumbai</p>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <img src="./images/stars.png" alt="">
-                        <p class="quote">“I have always wanted to explore Paris, and
-                            choosing Costa Cruise was the best decision
-                            I made. The itinerary was well-planned,
-                            allowing us to discover the city's hidden
-                            gems and iconic landmarks.”</p>
-                        <p class="author">Riya Kapoor - Mumbai</p>
-                    </div>
-                </div>
-                <!-- Add more testimonials as needed -->
+
+    </div>
+    <div class="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonials-container">
+            <div class="testimonial" id="testimonial1">
+                <img src="./images/stars.png" alt="Testimonial 1" class="testimonial-image">
+                <p class="testimonial-text">“I have always wanted to explore Paris, and
+                    choosing Costa Cruise was the best decision
+                    I made. The itinerary was well-planned,
+                    allowing us to discover the city's hidden
+                    gems and iconic landmarks.”</p>
+                <h4>Riya Verma - Mumbai</h4>
             </div>
-            <div class="controls">
-                <button class="prev-button"><img src="./images/leftbutton.png" alt="" /></button>
-                <button class="next-button"><img src="./images/rightbutton.png" alt="" /></button>
+            <div class="testimonial" id="testimonial2">
+                <img src="./images/stars.png" alt="Testimonial 2" class="testimonial-image">
+                <p class="testimonial-text">“I have always wanted to explore Paris, and
+                    choosing Costa Cruise was the best decision
+                    I made. The itinerary was well-planned,
+                    allowing us to discover the city's hidden
+                    gems and iconic landmarks.”</p>
+                <h4>Riya Kapoor - Mumbai</h4>
             </div>
-
-
-
+            <div class="testimonial" id="testimonial3">
+                <img src="./images/stars.png" alt="Testimonial 3" class="testimonial-image">
+                <p class="testimonial-text">“I have always wanted to explore Paris, and
+                    choosing Costa Cruise was the best decision
+                    I made. The itinerary was well-planned,
+                    allowing us to discover the city's hidden
+                    gems and iconic landmarks.”</p>
+                <h4>Riya Kapoor - Kolkata</h4>
+            </div>
+            <div class="prev-button" onclick="showPrevious()"> <img src="./images/leftbutton.png" alt=""></div>
+            <div class="next-button" onclick="showNext()"><img src="./images/rightbutton.png" alt=""></div>
         </div>
     </div>
+    <div class="popup">
+        <a href="#"><img src="./images/message.png" alt=""></a>
+        <a href="#"><img src="./images/call.png" alt=""></a>
+        <a href="#"><img src="./images/wapp.png" alt=""></a>
+    </div>
+    <div class="contact">
+
+        <div class="contact-box">
+            <div><img src="./images/contactImage.png" alt=""></div>
+            <div>
+                <h2>Get in touch with us</h2>
+                <p>To make your seacation safe and memorable! </p>
+                <form action="" class="form">
+                    <input type="text" placeholder="Enter your name*" />
+                    <input type="text" placeholder="Enter your Phone number*" />
+
+                    <input type="number" placeholder="Enter OTP*" />
+                </form>
+                <a class="cta-button" href="#">Submit</a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <img src="./images/logo.png" alt="">
+        <div class="address">
+            <h3>Address & Contact</h3>
+            <div class="lineTwo"></div>
+            <p class="add">Costa Cruise,
+                Fira, Santorini, 84700
+                Greece</p>
+            <p>Tel: +91 85475 25475</p>
+            <p>Tel: +91 85475 25475</p>
+        </div>
+        <div class="links">
+            <h3>Quick Links</h3>
+            <div class="lineTwo"></div>
+            <div>
+                <p><a href="#">Costa Experience</a></p>
+                <p><a href="#">Destinations</a></p>
+                <p><a href="#">About us</a></p>
+                <p><a href="#">Contact us</a></p>
+            </div>
+
+        </div>
+        <div class="call">
+            <h3>Get a Call back</h3>
+            <div class="lineTwo"></div>
+            <form class="footer-form">
+                <input type="text" placeholder="Enter your Phone number" />
+                <a class="submit-button" href="#">Submit</a>
+            </form>
+        </div>
+    </footer>
+
+
+
 
 
     <script src="script.js"></script>

@@ -24,12 +24,23 @@
                     <li><a href="#">Contact us</a></li>
                 </ul>
             </nav>
-            <div class="slide slide1"></div>
-            <div class="slide slide2"></div>
-            <div class="slide slide3"></div>
+            <div class="slide slide1">
+                <h1 class="heading">Costa Serena Sets Sail for India!</h1>
+                <p class="para">Nov - Dec 2023 Departures Now Available</p>
+            </div>
+            <div class="slide slide2">
+                <h1 class="heading">Largest Cruise Ship in Indian Waters
+
+                </h1>
+                <p class="para">Sail, discover, and fall in love with India's enchanting treasures</p>
+            </div>
+            <div class="slide slide3">
+                <h1 class="heading">Kids Sail Free
+
+                </h1>
+                <p class="para">Your Dream Cruise Is Now Affordable</p>
+            </div>
             <div class="slide-content">
-                <h1 class="heading">Discover the magic of the seas</h1>
-                <p class="para">Set Sail on a Dream Cruise Vacation!</p>
                 <a class="cta-button" href="#">Book Now</a>
             </div>
         </div>
@@ -289,13 +300,16 @@
     </div>
     <div class="about">
         <h1>About Us</h1>
-        <p>At the heart of our company is a passion for adventure, exploration, and the art of hospitality. We
-            strive to
-            create unforgettable moments and cherished memories for
-            every traveler who steps on board our ships. With a deep understanding of the unique desires and
-            preferences
-            of our guests, we have crafted a collection of carefully.</p>
-        <button><img src="./play.png" alt=""></button>
+        <p>Costa Cruises, is a renowned Italian cruising company with over 75 years of experience. Coming for the first
+            time to India, Costa offers unparalleled Italian hospitality, delightful cuisine, exquisite shopping, and a
+            vast selection of famous Italian brands. With 19,000 passionate associates worldwide, Costa Cruises creates
+            unforgettable holiday experiences through 137 itineraries, 261 destinations, and 60 embarkation ports across
+            Europe, Middle East, South America, Asia, and now Incredible India..</p>
+        <button id="playButton" class="play-button">
+            <img class="play-icon" src="./play.png" alt="Play">
+            <img class="pause-icon" src="./images/pause.png" alt="Pause">
+        </button>
+        <div id="videoContainer"></div>
     </div>
     <div class="experiences">
         <h1>Costa Experiences</h1>
@@ -305,14 +319,18 @@
         <div class="grid-items">
             <div class="item">
                 <img src="./images/experience1.png" alt="">
-
                 <div class="etinerary">
-                    <p>Accomodation</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
-
+                    <p>Accommodation</p>
+                    <button class="expand-button" onclick="toggleDropdown(this)"><img src="./images/arrowsmall.png"
+                            alt=""></button>
                 </div>
-
+                <div class="dropdown-content">
+                    <p>Experience the cabin of your dreams on Costa Cruises. With comfortable and cozy accommodations,
+                        it's the perfect place to unwind after a day of activities and socializing. Costa offers a
+                        variety of cabin types, ensuring you find the perfect space that suits your needs.</p>
+                </div>
             </div>
+
             <div class="item">
                 <img src="./images/experience2.png" alt="">
 
@@ -373,30 +391,32 @@
         <div class="testimonials-container">
             <div class="testimonial" id="testimonial1">
                 <img src="./images/stars.png" alt="Testimonial 1" class="testimonial-image">
-                <p class="testimonial-text">“I have always wanted to explore Paris, and
-                    choosing Costa Cruise was the best decision
-                    I made. The itinerary was well-planned,
-                    allowing us to discover the city's hidden
-                    gems and iconic landmarks.”</p>
-                <h4>Riya Verma - Mumbai</h4>
+                <p class="testimonial-text">“Costa Cruises exceeded all our expectations. The attention to detail, the
+                    luxurious amenities, and the friendly staff made our voyage truly remarkable. It was a dream
+                    vacation come true!”</p>
+                <h4>Riya Kapoor - Bangalore</h4>
             </div>
             <div class="testimonial" id="testimonial2">
                 <img src="./images/stars.png" alt="Testimonial 2" class="testimonial-image">
-                <p class="testimonial-text">“I have always wanted to explore Paris, and
-                    choosing Costa Cruise was the best decision
-                    I made. The itinerary was well-planned,
-                    allowing us to discover the city's hidden
-                    gems and iconic landmarks.”</p>
-                <h4>Riya Kapoor - Mumbai</h4>
+                <p class="testimonial-text">“Our Costa Cruises experience was like stepping into a world of pure luxury
+                    and indulgence. The ship's elegant design, the exquisite dining options, and the incredible on-board
+                    activities made it an unforgettable journey. We can't wait to cruise with Costa again!”</p>
+                <h4>Jason Dias - Mumbai</h4>
             </div>
             <div class="testimonial" id="testimonial3">
                 <img src="./images/stars.png" alt="Testimonial 3" class="testimonial-image">
-                <p class="testimonial-text">“I have always wanted to explore Paris, and
-                    choosing Costa Cruise was the best decision
-                    I made. The itinerary was well-planned,
-                    allowing us to discover the city's hidden
-                    gems and iconic landmarks.”</p>
-                <h4>Riya Kapoor - Kolkata</h4>
+                <p class="testimonial-text">“Our Costa Cruises experience was absolutely unforgettable! From the warm
+                    Italian hospitality to the exquisite cuisine and breathtaking destinations, every moment was pure
+                    magic. We can't wait to set sail with Costa again!”</p>
+                <h4>Rahul Sen - Mumbai</h4>
+            </div>
+            <div class="testimonial hidden" id="testimonial4">
+                <img src="./images/stars.png" alt="Testimonial 4" class="testimonial-image">
+                <p class="testimonial-text">“Costa Cruises provided the ultimate family getaway. Our kids were
+                    entertained from morning till night with the fantastic children's programs, while the adults enjoyed
+                    spa treatments and relaxing by the pool. It was a vacation that brought our family closer than
+                    ever.”</p>
+                <h4>Chirag Rane - Pune</h4>
             </div>
             <div class="prev-button" onclick="showPrevious()"> <img src="./images/leftbutton.png" alt=""></div>
             <div class="next-button" onclick="showNext()"><img src="./images/rightbutton.png" alt=""></div>

@@ -95,20 +95,30 @@ body {
 
 .slide-content {
     position: absolute;
-    top: 50%;
-    left: 35%;
+    top: 60%;
+    left: 11%;
     transform: translate(-55%, -50%);
     text-align: left;
     color: #ffffff;
 }
 
 .heading {
+    top: 35%;
+    position: absolute;
     font-size: 48px;
+    left: 6%;
+    /* transform: translate(5%, -50%); */
+    color: #fff;
 }
 
 .para{
-    margin: -30px 0 30px 0;
+    
     font-size: 20px;
+    top: 47%;
+    left: 6.2%;
+    /* transform: translate(9%, -50%); */
+    color: #fff;
+    position: absolute;
 
 
 }
@@ -287,6 +297,7 @@ body {
     background-image: url("./images/aboutBanner.png");
     position: relative;
     object-fit: cover;
+    background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -294,25 +305,65 @@ body {
     justify-content: center;
     padding : 20px 80px 120px 80px;
     z-index: 3;
-    height: 64vh;
+    height: 85vh;
     color: #ffff;
 }
 
 .about h1{
     font-size: 48px;
+    z-index: 6;
+    margin-bottom: 5px;
 }
 
 
 .about p{
     margin-top: 0px;
+    z-index: 6;
     width: 40%;
     font-size: 18px;
 }
 
 .about button{
+    z-index: 6;
     background: transparent;
     border: none;
 }
+
+.play-button .pause-icon {
+    display: none;
+  }
+  
+  .play-button.playing .play-icon {
+    display: none;
+  }
+  
+  .play-button.playing .pause-icon {
+    display: inline;
+  }
+  
+
+
+#videoContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  #videoContainer video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+
+
 
 .experiences{
     position: relative;
@@ -355,6 +406,25 @@ body {
 }
 
 
+
+.expand-button{
+    background: transparent;
+    border: none;
+}
+
+
+.dropdown-content {
+    display: none;
+  }
+  
+  .dropdown-content.show {
+    display: block;
+
+  }
+  
+
+
+
 .testimonials h2{
     text-align: center;
     color: rgba(1, 113, 163, 1);
@@ -367,29 +437,38 @@ body {
     align-items: center;
     margin: 10px 80px;
   }
-  
   .testimonial {
-    margin: 10px 30px;
+    margin: 0px 30px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    padding: 20px 40px;
+    padding: 20px 30px;
     background-color: #fff;
     align-items: center;
     filter: drop-shadow(0 0px 20px rgba(0, 0, 0, 0.1));
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, filter 0.5s ease;
     position: relative;
+    transform-origin: center;
   }
   
-
-
   .testimonial.blur {
-    opacity: 0.7; /* Apply the blur effect to the side testimonials */
-    transform: scale(0.7); /* Scale down the side testimonials */
+    opacity: 0.7;/* Apply the blur effect to the side testimonials */
+    transform: scale(0.9); /* Scale down the side testimonials */
   }
   
+  .testimonial.hidden {
+    display: none; /* Initially hide the fourth testimonial */
+  }
+  
+
+  .testimonial-text{
+    text-align: center;
+  }
+
+
+ 
   .rotate-previous .testimonial {
-    transform: translateX(-100%);
+    transform: translateX(-200%);
   }
   
   .rotate-next .testimonial {

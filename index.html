@@ -17,7 +17,12 @@
         <div class="slideshow">
             <nav class="navbar">
                 <img src="./images/logo.png" alt="">
-                <ul>
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="menu">
                     <li><a href="#">Destinations</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Costa Experience</a></li>
@@ -25,24 +30,27 @@
                 </ul>
             </nav>
             <div class="slide slide1">
-                <h1 class="heading">Costa Serena Sets Sail for India!</h1>
-                <p class="para">Nov - Dec 2023 Departures Now Available</p>
+                <div class="headPara">
+                    <h1 class="heading">Costa Serena Sets Sail for India!</h1>
+                    <p class="para">Nov - Dec 2023 Departures Now Available</p>
+                </div>
+                <a class="cta-button btn" href="#">Book Now</a>
             </div>
             <div class="slide slide2">
-                <h1 class="heading">Largest Cruise Ship in Indian Waters
-
-                </h1>
-                <p class="para">Sail, discover, and fall in love with India's enchanting treasures</p>
+                <div class="headPara">
+                    <h1 class="heading">Largest Cruise Ship in Indian Waters</h1>
+                    <p class="para">Sail, discover, and fall in love with India's enchanting treasures</p>
+                </div>
+                <a class="cta-button btn" href="#">Book Now</a>
             </div>
             <div class="slide slide3">
-                <h1 class="heading">Kids Sail Free
+                <div class="headPara">
+                    <h1 class="heading">Kids Sail Free</h1>
+                    <p class="para">Your Dream Cruise Is Now Affordable</p>
+                </div>
+                <a class="cta-button btn" href="#">Book Now</a>
+            </div>
 
-                </h1>
-                <p class="para">Your Dream Cruise Is Now Affordable</p>
-            </div>
-            <div class="slide-content">
-                <a class="cta-button" href="#">Book Now</a>
-            </div>
         </div>
     </div>
     <div class="grid">
@@ -53,8 +61,10 @@
                 <img src="./images/item1.png" alt="">
                 <div class="item-head">
                     <h3>Mumbai Sea Link - High Seas</h3>
-                    <p><span>Mumbai</span><span><img src="./images/arrow.png" alt=""></span> <span>Cruising</span>
-                        <span><img src="./images/arrow.png" alt=""></span><span>Mumbai</span>
+                    <p>
+                        <span>Mumbai</span><span><img src="./images/arrow.png" alt=""></span>
+                        <span>Cruising</span><span><img src="./images/arrow.png" alt=""></span>
+                        <span>Mumbai</span>
                     </p>
                 </div>
                 <div class="line"></div>
@@ -67,16 +77,49 @@
                     <a href="#">Inquire Now</a>
                 </div>
                 <div class="itinerary">
-                    <p class="">View Itinerary</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
-
+                    <p class="itinerary-text hide">View Itinerary</p>
+                    <button class="expand-button" onclick="toggleItinerary(this)">
+                        <img src="./images/arrowsmall.png" alt="">
+                    </button>
                 </div>
+                <div class="itinerary-details hide">
+                    <p>Itinerary</p>
 
+                    <div class="line3"></div>
+                    <div class="itineraryGrid">
+                        <div class="gridItem">
+                            <h5>Day</h5>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Port</h5>
+                            <p>Mumbai(India)</p>
+                            <p>Cruising</p>
+                            <p>Mumbai(India)</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Arrive</h5>
+                            <p>Embarkation</p>
+                            <p>-</p>
+                            <p>09:00</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Depart</h5>
+                            <p>18:00</p>
+                            <p>-</p>
+                            <p>Disembarkation</p>
+                        </div>
+                    </div>
+                    <button class="close-button" onclick="closeItinerary()">Close</button>
+                </div>
             </div>
+
             <div class="item">
                 <img src="./images/item2.png" alt="">
                 <div class="item-head">
-                    <h3>Mumbai Taj Gateway – Goa</h3>
+                    <h3>Mumbai Taj Gateway - Goa</h3>
                     <p><span>Mumbai</span><span><img src="./images/arrow.png" alt=""></span> <span>Goa</span>
                         <span><img src="./images/arrow.png" alt=""></span><span>Mumbai</span>
                     </p>
@@ -92,8 +135,41 @@
                 </div>
                 <div class="itinerary">
                     <p>View Itinerary</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
+                    <button class="expand-button" onclick="toggleItinerary(this)"><img src="./images/arrowsmall.png"
+                            alt=""></>
 
+                </div>
+                <div class="itinerary-details hide">
+                    <p>Itinerary</p>
+
+                    <div class="line3"></div>
+                    <div class="itineraryGrid">
+                        <div class="gridItem">
+                            <h5>Day</h5>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Port</h5>
+                            <p>Mumbai(India)</p>
+                            <p>Goa Mormugao(India)</p>
+                            <p>Mumbai(India)</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Arrive</h5>
+                            <p>Embarkation</p>
+                            <p>09:00</p>
+                            <p>09:00</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Depart</h5>
+                            <p>18:00</p>
+                            <p>17:00</p>
+                            <p>Disembarkation</p>
+                        </div>
+                    </div>
+                    <button class="close-button" onclick="closeItinerary()">Close</button>
                 </div>
 
             </div>
@@ -116,8 +192,40 @@
                 </div>
                 <div class="itinerary">
                     <p>View Itinerary</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
+                    <button class="expand-button" onclick="toggleItinerary(this)"><img src="./images/arrowsmall.png"
+                            alt=""></button>
+                </div>
+                <div class="itinerary-details hide">
+                    <p>Itinerary</p>
 
+                    <div class="line3"></div>
+                    <div class="itineraryGrid">
+                        <div class="gridItem">
+                            <h5>Day</h5>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Port</h5>
+                            <p>Mumbai(India)</p>
+                            <p>Cruising</p>
+                            <p>Cochin(India)</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Arrive</h5>
+                            <p>Embarkation</p>
+                            <p>-</p>
+                            <p>09:00</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Depart</h5>
+                            <p>18:00</p>
+                            <p>-</p>
+                            <p>Disembarkation</p>
+                        </div>
+                    </div>
+                    <button class="close-button" onclick="closeItinerary()">Close</button>
                 </div>
 
             </div>
@@ -142,7 +250,44 @@
                 </div>
                 <div class="itinerary">
                     <p>View Itinerary</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
+                    <button class="expand-button" onclick="toggleItinerary(this)"><img src="./images/arrowsmall.png"
+                            alt=""></>
+                </div>
+                <div class="itinerary-details hide">
+                    <p>Itinerary</p>
+
+                    <div class="line3"></div>
+                    <div class="itineraryGrid">
+                        <div class="gridItem">
+                            <h5>Day</h5>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                            <p>4</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Port</h5>
+                            <p>Mumbai(India)</p>
+                            <p>Cruising</p>
+                            <p>Goa Mormugao(India)</p>
+                            <p>Mumbai(India)</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Arrive</h5>
+                            <p>Embarkation</p>
+                            <p>-</p>
+                            <p>09:00</p>
+                            <p>09:00</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Depart</h5>
+                            <p>18:00</p>
+                            <p></p>
+                            <p>17:00</p>
+                            <p>Disembarkation</p>
+                        </div>
+                    </div>
+                    <button class="close-button" onclick="closeItinerary()">Close</button>
                 </div>
 
             </div>
@@ -167,8 +312,45 @@
                 </div>
                 <div class="itinerary">
                     <p>View Itinerary</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
+                    <button class="expand-button" onclick="toggleItinerary(this)"><img src="./images/arrowsmall.png"
+                            alt=""></button>
+                </div>
+                <div class="itinerary-details hide">
+                    <p>Itinerary</p>
 
+                    <div class="line3"></div>
+
+                    <div class="itineraryGrid">
+                        <div class="gridItem">
+                            <h5>Day</h5>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                            <p>4</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Port</h5>
+                            <p>Cochin(India)</p>
+                            <p>Cruising</p>
+                            <p>Goa Mormugao(India)</p>
+                            <p>Mumbai(India)</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Arrive</h5>
+                            <p>Embarkation</p>
+                            <p>-</p>
+                            <p>09:00</p>
+                            <p>09:00</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Depart</h5>
+                            <p>17:00</p>
+                            <p>-</p>
+                            <p>17:00</p>
+                            <p>Disembarkation</p>
+                        </div>
+                    </div>
+                    <button class="close-button" onclick="closeItinerary()">Close</button>
                 </div>
 
             </div>
@@ -193,10 +375,47 @@
                 </div>
                 <div class="itinerary">
                     <p>View Itinerary</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
-
+                    <button class="expand-button" onclick="toggleItinerary(this)"><img src="./images/arrowsmall.png"
+                            alt=""></button>
                 </div>
+                <div class="itinerary-details hide">
+                    <p>Itinerary</p>
 
+                    <div class="line3"></div>
+
+                    <div class="itineraryGrid">
+                        <div class="gridItem">
+                            <h5>Day</h5>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                            <p>4</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Port</h5>
+                            <p>Mumbai (India)</p>
+                            <p>Goa Mormugao (India)</p>
+                            <p>Goa Mormugao (India)</p>
+                            <p>Mumbai(India)</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Arrive</h5>
+                            <p>Embarkation</p>
+                            <p>13:00</p>
+                            <p>-</p>
+                            <p>09:00</p>
+
+                        </div>
+                        <div class="gridItem">
+                            <h5>Depart</h5>
+                            <p>18:00</p>
+                            <p>Overnight Ship Docked</p>
+                            <p>12:00 noon</p>
+                            <p>Disembarkation</p>
+                        </div>
+                    </div>
+                    <button class="close-button" onclick="closeItinerary()">Close</button>
+                </div>
             </div>
             <div class="item">
                 <img src="./images/item7.png" alt="" class="item1Img">
@@ -222,8 +441,46 @@
                 </div>
                 <div class="itinerary">
                     <p>View Itinerary</p>
-                    <img src="./images/arrowsmall.png" alt="" class="expand-button" />
+                    <button class="expand-button" onclick="toggleItinerary(this)"><img src="./images/arrowsmall.png"
+                            alt="" /></button>
+                </div>
+                <div class="itinerary-details hide">
+                    <p>Itinerary</p>
 
+                    <div class="line3"></div>
+
+                    <div class="itineraryGrid">
+                        <div class="gridItem">
+                            <h5>Day</h5>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                            <p>4</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Port</h5>
+                            <p>Cochin (India)</p>
+                            <p>Agatti Island (India)</p>
+                            <p>Cruising</p>
+                            <p>Mumbai(India)</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Arrive</h5>
+                            <p>Embarkation</p>
+                            <p>09:00</p>
+                            <p>-</p>
+                            <p>09:00</p>
+
+                        </div>
+                        <div class="gridItem">
+                            <h5>Depart</h5>
+                            <p>17:00</p>
+                            <p>18:00</p>
+                            <p>-</p>
+                            <p>Disembarkation</p>
+                        </div>
+                    </div>
+                    <button class="close-button" onclick="closeItinerary()">Close</button>
                 </div>
 
             </div>
@@ -256,8 +513,54 @@
                 </div>
                 <div class="itinerary">
                     <p>View Itinerary</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
+                    <button class="expand-button" onclick="toggleItinerary(this)"><img src="./images/arrowsmall.png"
+                            alt=""></button>
+                </div>
+                <div class="itinerary-details hide">
+                    <p>Itinerary</p>
 
+                    <div class="line3"></div>
+
+                    <div class="itineraryGrid">
+                        <div class="gridItem">
+                            <h5>Day</h5>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                            <p>4</p>
+                            <p>5</p>
+                            <p>6</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Port</h5>
+                            <p>Mumbai (India)</p>
+                            <p>Cruising</p>
+                            <p>Cochin (India)</p>
+                            <p>Cruising</p>
+                            <p>Goa Mormugao (India)</p>
+                            <p>Mumbai (India)</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Arrive</h5>
+                            <p>Embarkation</p>
+                            <p>-</p>
+                            <p>09:00</p>
+                            <p>-</p>
+                            <p>09:00</p>
+                            <p>09:00</p>
+
+                        </div>
+                        <div class="gridItem">
+                            <h5>Depart</h5>
+                            <p>18:00</p>
+                            <p>-</p>
+                            <p>17:00</p>
+                            <p>-</p>
+                            <p>17:00</p>
+                            <p>Disembarkation</p>
+                        </div>
+                    </div>
+                    <button class="close-button" onclick="closeItinerary()">Close</button>
                 </div>
 
             </div>
@@ -290,21 +593,72 @@
                 </div>
                 <div class="itinerary">
                     <p>View Itinerary</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
+                    <button class="expand-button" onclick="toggleItinerary(this)"><img src="./images/arrowsmall.png"
+                            alt=""></button>
+                </div>
+                <div class="itinerary-details hide">
+                    <p>Itinerary</p>
 
+                    <div class="line3"></div>
+
+                    <div class="itineraryGrid">
+                        <div class="gridItem">
+                            <h5>Day</h5>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                            <p>4</p>
+                            <p>5</p>
+                            <p>6</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Port</h5>
+                            <p>Mumbai (India)</p>
+                            <p>Cruising</p>
+                            <p>Cochin (India)</p>
+                            <p>Agatti Island (India)</p>
+                            <p>Cruising</p>
+                            <p>Mumbai(India)</p>
+                        </div>
+                        <div class="gridItem">
+                            <h5>Arrive</h5>
+                            <p>Embarkation</p>
+                            <p>-</p>
+                            <p>09:00</p>
+                            <p>09:00</p>
+                            <p>-</p>
+                            <p>09:00</p>
+
+                        </div>
+                        <div class="gridItem">
+                            <h5>Depart</h5>
+                            <p>18:00</p>
+                            <p>-</p>
+                            <p>17:00</p>
+                            <p>18:00</p>
+                            <p>-</p>
+                            <p>Disembarkation</p>
+                        </div>
+                    </div>
+                    <button class="close-button" onclick="closeItinerary()">Close</button>
                 </div>
 
             </div>
-
         </div>
     </div>
     <div class="about">
-        <h1>About Us</h1>
-        <p>Costa Cruises, is a renowned Italian cruising company with over 75 years of experience. Coming for the first
-            time to India, Costa offers unparalleled Italian hospitality, delightful cuisine, exquisite shopping, and a
-            vast selection of famous Italian brands. With 19,000 passionate associates worldwide, Costa Cruises creates
-            unforgettable holiday experiences through 137 itineraries, 261 destinations, and 60 embarkation ports across
-            Europe, Middle East, South America, Asia, and now Incredible India..</p>
+        <div id="about-content" class="hiddenContent">
+            <h1>About Us</h1>
+            <p>Costa Cruises, is a renowned Italian cruising company with over 75 years of experience. Coming for the
+                first
+                time to India, Costa offers unparalleled Italian hospitality, delightful cuisine, exquisite shopping,
+                and a
+                vast selection of famous Italian brands. With 19,000 passionate associates worldwide, Costa Cruises
+                creates
+                unforgettable holiday experiences through 137 itineraries, 261 destinations, and 60 embarkation ports
+                across
+                Europe, Middle East, South America, Asia, and now Incredible India.</p>
+        </div>
         <button id="playButton" class="play-button">
             <img class="play-icon" src="./play.png" alt="Play">
             <img class="pause-icon" src="./images/pause.png" alt="Pause">
@@ -321,8 +675,8 @@
                 <img src="./images/experience1.png" alt="">
                 <div class="etinerary">
                     <p>Accommodation</p>
-                    <button class="expand-button" onclick="toggleDropdown(this)"><img src="./images/arrowsmall.png"
-                            alt=""></button>
+                    <button class="expand-button" onclick={toggleDropdown(this)}><img src="./images/arrowsmall.png"
+                            alt="" class="button-icon"></button>
                 </div>
                 <div class="dropdown-content">
                     <p>Experience the cabin of your dreams on Costa Cruises. With comfortable and cozy accommodations,
@@ -336,8 +690,13 @@
 
                 <div class="etinerary">
                     <p>Wedding</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
-
+                    <button class="expand-button" onclick={toggleDropdown(this)}><img src="./images/arrowsmall.png"
+                            alt="" class="button-icon"></button>
+                </div>
+                <div class="dropdown-content">
+                    <p>Let Costa Cruises make your wedding dreams come true. We take care of every detail, allowing you
+                        to fully enjoy the joy and romance of your special day. Experience the biggest-ever wedding at
+                        sea and create extraordinary memories that will last a lifetime.</p>
                 </div>
 
             </div>
@@ -346,17 +705,26 @@
 
                 <div class="etinerary">
                     <p>Corporate</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
-
+                    <button class="expand-button" onclick="toggleDropdown(this)"><img src="./images/arrowsmall.png"
+                            alt="" class="button-icon"></button>
+                </div>
+                <div class="dropdown-content">
+                    <p>Experience the perfect blend of work and fun on a Costa cruise. Our efficient and economical
+                        approach makes conducting meetings, conferences, and workshops at sea a breeze. Let us help you
+                        create a memorable and productive event onboard your next Costa Cruise.</p>
                 </div>
 
             </div>
             <div class="item">
                 <img src="./images/experience4.png" alt="">
-
                 <div class="etinerary">
                     <p>Destinations</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
+                    <button class="expand-button" onclick="toggleDropdown(this)"><img src="./images/arrowsmall.png"
+                            alt="" class="button-icon"></button>
+                </div>
+                <div class="dropdown-content">
+                    <p>Let your imagination wander and your heart guide you. Costa Cruises takes you to explore every
+                        corner of the world. Simply pack your bags and embark on an unforgettable journey.</p>
                 </div>
 
             </div>
@@ -365,8 +733,13 @@
 
                 <div class="etinerary">
                     <p>Entertainment</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
-
+                    <button class="expand-button" onclick="toggleDropdown(this)"><img src="./images/arrowsmall.png"
+                            alt="" class="button-icon"></button>
+                </div>
+                <div class="dropdown-content">
+                    <p>Indulge in endless entertainment on Costa Cruises. From poolside relaxation to exciting games and
+                        shopping, every day is filled with fun. In the evening, prepare for unforgettable moments with
+                        captivating shows and performances at the theatre. </p>
                 </div>
 
             </div>
@@ -375,16 +748,18 @@
 
                 <div class="etinerary">
                     <p>Food</p>
-                    <a href="javascript:void(0)" class="expand-button"><img src="./images/arrowsmall.png" alt=""></a>
-
+                    <button class="expand-button" onclick="toggleDropdown(this)"><img src="./images/arrowsmall.png"
+                            alt="" class="button-icon"></button>
+                </div>
+                <div class="dropdown-content">
+                    <p>Savor the best of Indian and international cuisine on Costa Cruises. Whether you prefer a relaxed
+                        buffet or a
+                        more traditional dining experience, our diverse options cater to all tastes and dietary
+                        preferences.</p>
                 </div>
 
             </div>
-
         </div>
-
-
-
     </div>
     <div class="testimonials">
         <h2>Testimonials</h2>
@@ -430,8 +805,8 @@
     <div class="contact">
 
         <div class="contact-box">
-            <div><img src="./images/contactImage.png" alt=""></div>
-            <div>
+            <div><img src="./images/contact.jpeg" alt=""></div>
+            <div class="contact-text">
                 <h2>Get in touch with us</h2>
                 <p>To make your seacation safe and memorable! </p>
                 <form action="" class="form">
@@ -447,11 +822,11 @@
     <footer class="footer">
         <img src="./images/logo.png" alt="">
         <div class="address">
-            <h3>Address & Contact</h3>
+            <h3>Contact</h3>
             <div class="lineTwo"></div>
-            <p class="add">Costa Cruise,
+            <!-- <p class="add">Costa Cruise,
                 Fira, Santorini, 84700
-                Greece</p>
+                Greece</p> -->
             <p>Tel: +91 85475 25475</p>
             <p>Tel: +91 85475 25475</p>
         </div>

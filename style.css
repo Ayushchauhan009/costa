@@ -39,6 +39,12 @@ body {
 
 }
 
+
+.hidden-content{
+  visibility: hidden;
+}
+
+
 .navbar li {
     margin-right: 60px;
 }
@@ -368,6 +374,7 @@ body {
     z-index: 6;
     background: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .play-button .pause-icon {
@@ -472,16 +479,15 @@ body {
   width: 89.4%;
   min-height:73.3%;
   padding: 20px;
-  z-index: 4; /* Add z-index for the dropdown content */
+  z-index: 4;
 }
 
 .dropdown-content.show {
   display: block;
   position: absolute;
   line-height: 22.6px;
-  
   transition: all 0.7s ease;
-  z-index: 8; /* Set a higher z-index for the expanded dropdown */
+  z-index: 8; 
 }
 
 
@@ -489,8 +495,6 @@ body {
   padding-bottom: 40px;
 }
   
-
-
 
 .testimonials h2{
     text-align: center;
@@ -570,9 +574,9 @@ body {
 
   .popup {
     position: fixed;
-    top: 50%; /* Adjust the top position as needed */
-    right: 20px; /* Adjust the right position as needed */
-    transform: translateY(-50%); /* Center the container vertically */
+    top: 70%; 
+    right: 20px; 
+    transform: translateY(-50%); 
     display: flex;
     z-index: 10;
     flex-direction: column;
@@ -680,7 +684,6 @@ body {
     align-items: start;
     padding-top: 100px;
     justify-content: space-evenly;
-
     color: #ffff;
   }
 
@@ -698,7 +701,6 @@ body {
     width: 200px;
     height: 2px;
     margin: 20px 0;
-    
   }
 
 
@@ -721,7 +723,6 @@ body {
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
     padding: 10px ;
-    /* margin: 10px 0; */
     font-size: 16px;
     width: 110%;
   }
@@ -751,8 +752,9 @@ body {
   display: none;
   position: fixed;
   top: 50%;
-  width: 40%;
+  width: 35%;
   left: 50%;
+  height: 80%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: 5px;
@@ -766,7 +768,8 @@ body {
 .form-p{
   text-align: center;
   color: rgba(1, 113, 163, 1);
-  font-size: 36px;
+  font-size: 28px;
+  margin:10px 0;
 }
 
 .form-field input{
@@ -775,24 +778,26 @@ body {
   border: none;
   background: rgba(237, 237, 237, 1);
   border-radius: 5px;
-  padding: 15px ;
-  margin: 10px 40px;
+  padding: 10px ;
+  margin: 10px 70px;
   font-size: 18px;
-  width: 80%;
+  width: 65%;
 }
 
 .logo2{
-  margin-left: 38%;
+  margin-left: 40%;
   margin-top: 2% ;
-  margin-bottom: 2% ;
+  margin-bottom: 1% ;
+  width: 85px;
+  height: 60px;
 }
 
 .close-button-popup {
   position: relative;
   top: 2px;
-  left: 490px;
+  left: 420px;
   margin: 5px 0;
-  /* float: right; */
+  
   background: transparent;
   border: none;
   width: 30px;
@@ -801,18 +806,29 @@ body {
   cursor: pointer;
 }
 .form-sub-button {
-  display: inline-block;
-  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px;
+  width: 69%;
   background: rgba(248, 177, 18, 1);
   color: #ffffff;
   border: none;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  margin: 10px 40px;
+  margin: 10px 70px;
   text-decoration: none;
   cursor: pointer;
+}
+
+.form-pp{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: rgba(1, 113, 163, 1);
+  margin-left: 40px;
 }
 
 
@@ -821,19 +837,62 @@ body {
 @media (max-width: 768px){
   .navbar {
     justify-content: space-between;
-    /* flex-direction: column; */
     align-items: start;
     margin: 20px 0px;
+  }
+
+
+  .menu{
+    display: none;
   }
 
   .navbar img{
     padding-left: 10px ;
   }
-  .headPara {
+
+  .slide {
+    padding-top: 116.25%; 
+    height: 0;
+  }
+  .slideshow {
     position: relative;
-    margin-top: 240px;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 54vh;
+}
+
+  .heading {
+    /* top: 35%;
+    position: absolute; */
+    font-size: 28px;
+    left: 6%;
+    margin: 0;
+    /* transform: translate(5%, -50%); */
+    color: #fff;
+}
+
+.para{
+    
+    font-size: 20px;
+    top: 47%;
+    left: 6.2%;
+    margin-top: 10px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    /* transform: translate(9%, -50%); */
+    color: #fff;
+    /* position: absolute; */
+
+
+}
+  .headPara {
+    position: absolute;
+    margin-top: -286px;
     margin-left: 15px;
   }
+
+
   .btn{
     position: relative;
     margin-top: 20px;
@@ -897,24 +956,30 @@ body {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  padding: 20px 90px;
+  padding: 20px 70px;
   background-color: #fff;
   width: auto;
+  opacity: 1;
   align-items: center;
-  filter: drop-shadow(0 0px 20px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 0px 20px rgba(0, 0, 0, 0.2));
   transition: transform 0.5s ease, filter 0.5s ease;
   position: relative;
   transform-origin: center;
 }
 
+.testimonial h4{
+  white-space: nowrap;
+}
+
+
 .testimonial-text{
-  width: auto;
+  width: 160%;
 }
 
 .prev-button,
 .next-button {
   position: absolute;
-  top: 1354%;
+  top: 1286%;
   width: 30px;
   z-index: 5;
   height: 30px;
@@ -924,22 +989,29 @@ body {
   cursor: pointer;
 }
 
-.contact{
-  position: relative;
-  margin: 180px 20px;
-  background-color: #ffff;
-  padding: 80px 0 ;
-  
-  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.1));
+
+.popup img{
+  margin: 5px;
+  width: 40px;
+  height: 40px;
 }
 
+
+.contact{
+  position: relative;
+  margin: 70px 20px;
+  background-color: #ffff;
+  padding: 80px 0 ;  
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.1));
+}
 
 .contact-box {
   flex-direction: column;
   align-items: center;
-  
   justify-content: center;
 }
+
+
 .contact-text{
   margin-left: 0px;
   margin-top: 30px;
@@ -971,7 +1043,7 @@ body {
 }
 .popup {
   position: fixed;
-  top: 50%; /* Adjust the top position as needed */
+  top: 60%; /* Adjust the top position as needed */
   right: 20px; /* Adjust the right position as needed */
   transform: translateY(-10%); /* Center the container vertically */
   display: flex;
@@ -1056,8 +1128,11 @@ footer{
   cursor: pointer;
 }
 .form-sub-button {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px 20px;
+  width: 79%;
   background: rgba(248, 177, 18, 1);
   color: #ffffff;
   border: none;
@@ -1087,7 +1162,7 @@ footer{
 }
 
 .menu{
-  display: block;
+  display: flex;
 }
 
 
@@ -1309,10 +1384,3 @@ footer{
 
 
 
-.form-pp{
-  margin-top: 0;
-  margin-bottom: 5px;
-  font-size: 20px;
-  color: rgba(1, 113, 163, 1);
-  margin-left: 40px;
-}

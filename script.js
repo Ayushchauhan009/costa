@@ -1,11 +1,3 @@
-// const sliderInner = document.querySelector(".slider-inner");
-// let slideIndex = 0;
-
-// setInterval(() => {
-//   slideIndex = (slideIndex + 1) % 3;
-//   sliderInner.style.transform = `translateX(-${slideIndex * 100}%)`;
-// }, 3000);
-
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
 
@@ -26,7 +18,7 @@ let interval;
 function startSlider() {
   interval = setInterval(() => {
     goToSlide(currentIndex + 1);
-  }, 5000);
+  }, 8000);
 }
 
 function goToSlide(index) {
@@ -237,5 +229,28 @@ function openPopupAfterTime(time) {
 // Function to open the popup form when the user reaches a specific height of the page (e.g., 500px from the top)
 
 // Call the functions to open the popup form after 5 seconds and at 500px height
-openPopupAfterTime(7000); // Open after 5 seconds (5000ms)
+openPopupAfterTime(20000); // Open after 5 seconds (5000ms)
 // Open when the user scrolls to 500px height
+
+// Smooth scrolling for anchor links
+const navLinks = document.querySelectorAll(".menu a");
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    const targetId = link.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+    const headerOffset = 60; // Adjust this value if you have a fixed header
+    const elementPosition = targetSection.getBoundingClientRect().top;
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollBy({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+
+    // Close the menu on mobile devices after clicking a link
+    const menu = document.querySelector(".menu");
+    menu.classList.remove("active");
+  });
+});

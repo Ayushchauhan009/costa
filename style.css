@@ -1087,7 +1087,7 @@ footer{
 }
 
 .menu{
-  display: none;
+  display: block;
 }
 
 
@@ -1108,7 +1108,7 @@ footer{
 @media (max-width: 768px) {
   
   .menu {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: start;
     background-color: #fff;

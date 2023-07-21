@@ -10,10 +10,10 @@ const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
 
 menuToggle.addEventListener("click", () => {
-  if (menu.style.display === "block") {
-    menu.style.display = "none";
-  } else {
+  if (menu.style.display === "none") {
     menu.style.display = "block";
+  } else {
+    menu.style.display = "none";
   }
 });
 
@@ -42,6 +42,7 @@ const videoContainer = document.getElementById("videoContainer");
 const aboutContent = document.getElementById("about-content");
 const video = document.createElement("video");
 let isVideoLoaded = false;
+let isVideoPlaying = false;
 
 function loadVideo() {
   video.src = "CostaVideo.mp4";
@@ -55,10 +56,14 @@ function loadVideo() {
     videoContainer.appendChild(video);
     video.play();
     playButton.classList.add("playing");
+    aboutContent.classList.add("hidden-content");
+    isVideoPlaying = true;
   });
 
   video.addEventListener("ended", () => {
     playButton.classList.remove("playing");
+    isVideoPlaying = false;
+    aboutContent.classList.remove("hidden-content");
   });
 }
 
@@ -66,16 +71,20 @@ playButton.addEventListener("click", () => {
   if (!isVideoLoaded) {
     loadVideo();
   } else {
-    if (video.paused) {
+    if (!isVideoPlaying) {
       video.play();
       playButton.classList.add("playing");
-      aboutContent.classList.add("hiddenContent");
+      aboutContent.classList.add("hidden-content");
+      isVideoPlaying = true;
     } else {
       video.pause();
       playButton.classList.remove("playing");
+      aboutContent.classList.remove("hidden-content");
+      isVideoPlaying = false;
     }
   }
 });
+
 let buttonIcon; // Declare the buttonIcon variable outside the toggleDropdown() function
 
 function toggleDropdown(button) {
@@ -195,3 +204,38 @@ function closeItinerary(exceptItem) {
     }
   });
 }
+// Get all the book now buttons, the close button, and the popup form element
+// Your existing JavaScript code
+const bookNowButtons = document.querySelectorAll(".bookNow");
+const closeButton = document.getElementById("closeButton");
+const popupForm = document.getElementById("popupForm");
+
+// Function to toggle the popup form display
+function togglePopupForm() {
+  if (popupForm.style.display === "block") {
+    popupForm.style.display = "none";
+  } else {
+    popupForm.style.display = "block";
+  }
+}
+
+// Event listener for all book now buttons to open the popup form
+bookNowButtons.forEach((button) => {
+  button.addEventListener("click", togglePopupForm);
+});
+
+// Event listener for the close button to close the popup form
+closeButton.addEventListener("click", togglePopupForm);
+
+// Function to open the popup form after a specific time (e.g., 5000ms = 5 seconds)
+function openPopupAfterTime(time) {
+  setTimeout(() => {
+    popupForm.style.display = "block";
+  }, time);
+}
+
+// Function to open the popup form when the user reaches a specific height of the page (e.g., 500px from the top)
+
+// Call the functions to open the popup form after 5 seconds and at 500px height
+openPopupAfterTime(7000); // Open after 5 seconds (5000ms)
+// Open when the user scrolls to 500px height

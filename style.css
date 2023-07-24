@@ -87,11 +87,20 @@ body {
 
 .slide2 {
     background-image: url("./images/image2.png");
-    
+    }
+
+.overlay-slide{
+  color: rgba(1, 113, 163, 1);
+  opacity: 0.5;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
 }
+
 
 .slide3 {
     background-image: url("./images/image3.png");
+
    
 }
 
@@ -482,6 +491,11 @@ body {
   z-index: 4;
 }
 
+
+.dropdown-content p{
+  font-weight: 500;
+}
+
 .dropdown-content.show {
   display: block;
   position: absolute;
@@ -651,7 +665,7 @@ body {
     padding: 15px ;
     margin: 10px 0;
     font-size: 16px;
-    width: 110%;
+    width: 91.5%;
   }
 
 
@@ -669,7 +683,23 @@ body {
     display: none;
   }
 
+.otpBox{
+  display: flex;
+}
 
+
+.otpBox button{
+  right : 13%;
+  border: none;
+  outline: none;
+  color: rgba(1, 113, 163, 1);
+  border-bottom: 2px solid rgba(1, 113, 163, 1);
+  font-weight: 600;
+  cursor: pointer;
+
+  margin-top: 2%;
+  position: fixed;
+}
 
 
   footer{
@@ -835,6 +865,13 @@ body {
 
 
 @media (max-width: 768px){
+
+
+  .item-head h3{
+    font-size: 23px;
+  }
+
+
   .navbar {
     justify-content: space-between;
     align-items: start;
@@ -853,6 +890,7 @@ body {
   .slide {
     padding-top: 116.25%; 
     height: 0;
+    translate: (-50%);
   }
   .slideshow {
     position: relative;
@@ -897,18 +935,24 @@ body {
     position: relative;
     margin-top: 20px;
     width: 25%;
-    left: 30%;
+    left: 0%;
     top: 70%;
     /* top: 10%; */
   }
   .grid {
-    padding: 10px;
+    padding: 0px 10px;
   }
 
 
   .grid h1{
-    font-size: 28px;
+    font-size: 22px;
+    margin-top: 45px ;
   }
+
+.tag{
+  font-size: 16px;
+}
+
   .grid-items {
     grid-template-columns:repeat(1, 1fr);
     justify-content: center;
@@ -937,10 +981,11 @@ body {
 }
 .experiences h1{
   font-size: 28px;
+  margin-top: 25px;
 }
 
 .experiences p{
-  font-size: 18px;
+  font-size: 16px;
 }
 
 
@@ -952,7 +997,7 @@ body {
 }
 
 .testimonial {
-  margin: 0px 30px;
+  margin: 0px 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -961,10 +1006,16 @@ body {
   width: auto;
   opacity: 1;
   align-items: center;
-  filter: drop-shadow(0 0px 20px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 0px 10px rgba(0, 0, 0, 0.1));
   transition: transform 0.5s ease, filter 0.5s ease;
   position: relative;
   transform-origin: center;
+}
+
+
+.testimonials h2{
+  margin-top: 70px;
+  margin-bottom: 10px;
 }
 
 .testimonial h4{
@@ -978,17 +1029,15 @@ body {
 
 .prev-button,
 .next-button {
-  position: absolute;
-  top: 1286%;
-  width: 30px;
-  z-index: 5;
-  height: 30px;
-  filter: drop-shadow(0 0px 20px rgba(0, 0, 0, 0.2));
-  background-size: cover;
-  background-repeat: no-repeat;
-  cursor: pointer;
+  display: none;
 }
 
+.prev-button{
+  left: 2%;
+}
+.next-button{
+  right: 2.5%;
+}
 
 .popup img{
   margin: 5px;
@@ -1010,6 +1059,8 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+
 
 
 .contact-text{
@@ -1086,6 +1137,7 @@ footer{
   transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: 5px;
+  height: 70%;
   padding: 0px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 9999;
@@ -1094,6 +1146,7 @@ footer{
 
 .form-p{
   font-size: 28px;
+  font-weight: 600;
 }
 
 .form-field input{
@@ -1108,8 +1161,12 @@ footer{
   width: 71%;
 }
 
+.form-pp{
+  font-size: 14px;
+}
+
 .logo2{
-  margin-left: 32%;
+  margin-left: 38%;
   margin-top: 2% ;
   margin-bottom: 2% ;
 }

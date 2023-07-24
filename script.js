@@ -1,3 +1,24 @@
+function sendMail() {
+  const params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phoneNumber").value,
+  };
+
+  const serviceID = "service_costa";
+  const templateID = "template_jfn1sha";
+
+  emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+      (document.getElementById("name").value = ""),
+        (document.getElementById("email").value = ""),
+        (document.getElementById("phoneNumber").value = ""),
+        alert("Your query received successfully");
+    })
+    .catch((err) => console.log(err));
+}
+
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
 
@@ -254,3 +275,72 @@ navLinks.forEach((link) => {
     menu.classList.remove("active");
   });
 });
+
+// let currentTestimonial = 1;
+// const totalTestimonials = 4; // Change this to the total number of testimonials
+// let isMobile = false;
+// let scrollInterval;
+
+// function showTestimonial(n) {
+//   const testimonials = document.getElementsByClassName("testimonial");
+//   if (n < 1) {
+//     currentTestimonial = totalTestimonials;
+//   } else if (n > totalTestimonials) {
+//     currentTestimonial = 1;
+//   }
+
+//   for (let i = 0; i < testimonials.length; i++) {
+//     testimonials[i].classList.add("hidden");
+//   }
+
+//   document
+//     .getElementById("testimonial" + currentTestimonial)
+//     .classList.remove("hidden");
+// }
+
+// function showNext() {
+//   currentTestimonial++;
+//   showTestimonial(currentTestimonial);
+// }
+
+// function showPrevious() {
+//   currentTestimonial--;
+//   showTestimonial(currentTestimonial);
+// }
+
+// function startAutoScrollMobile() {
+//   if (isMobile) {
+//     scrollInterval = setInterval(showNext, 5000); // Change 5000 to the desired interval in milliseconds (e.g., 5000 for 5 seconds)
+//   }
+// }
+
+// function stopAutoScrollMobile() {
+//   clearInterval(scrollInterval);
+// }
+
+// function detectMobileDevice() {
+//   isMobile = window.matchMedia("(max-width: 767px)").matches;
+// }
+
+// // Call the function to detect mobile devices
+// detectMobileDevice();
+
+// // Start auto-scroll on mobile devices when the page loads
+// startAutoScrollMobile();
+
+// // Stop auto-scroll on touch (to prevent scrolling while the user interacts with testimonials)
+// document
+//   .querySelector(".testimonials-container")
+//   .addEventListener("touchstart", function () {
+//     if (isMobile) {
+//       stopAutoScrollMobile();
+//     }
+//   });
+
+// document
+//   .querySelector(".testimonials-container")
+//   .addEventListener("touchend", function () {
+//     if (isMobile) {
+//       startAutoScrollMobile();
+//     }
+//   });

@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Costa Cruises</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("iZhMWi5i--Xfk7Kq-");
+        })();
+    </script>
 </head>
 
 <body>
@@ -36,6 +43,7 @@
 
             </div>
             <div class="slide slide2">
+                <div class="overlaySlide"></div>
                 <div class="headPara">
                     <h1 class="heading">Largest Cruise Ship in Indian Waters</h1>
                     <p class="para">Sail, discover, and fall in love with India's enchanting treasures</p>
@@ -74,7 +82,7 @@
                     <p class="dept">Departure <span>24 Nov, 01 Dec, 08 Dec, 15 Dec 2023</span></p>
                 </div>
                 <div class="buttons">
-                    <a href="#">Contact Us</a>
+                    <a href="tel:+918591932303">Contact Us</a>
                     <button class="bookNow">Inquire Now</button>
                 </div>
                 <div class="itinerary">
@@ -130,7 +138,7 @@
                     <p class="dept">Departure <span>06 Dec, 17 Dec, 22 Dec 2023</span></p>
                 </div>
                 <div class="buttons">
-                    <a href="#">Contact Us</a>
+                    <a href="tel:+918591932303">Contact Us</a>
                     <button class="bookNow">Inquire Now</button>
                 </div>
                 <div class="itinerary">
@@ -187,7 +195,7 @@
                     <p class="dept">Departure <span>19 Nov, 26 Nov, 10 Dec, 24 Dec 2023</span></p>
                 </div>
                 <div class="buttons">
-                    <a href="#">Contact Us</a>
+                    <a href="tel:+918591932303">Contact Us</a>
                     <button class="bookNow">Inquire Now</button>
                 </div>
                 <div class="itinerary">
@@ -245,7 +253,7 @@
                     <p class="dept">Departure <span>04 Nov, 07 Nov, 03 Dec, 19 Dec 2023</span></p>
                 </div>
                 <div class="buttons">
-                    <a href="#">Contact Us</a>
+                    <a href="tel:+918591932303">Contact Us</a>
                     <button class="bookNow">Inquire Now</button>
                 </div>
                 <div class="itinerary">
@@ -307,7 +315,7 @@
                     <p class="dept">Departure <span>21 Nov, 12 Dec 2023</span></p>
                 </div>
                 <div class="buttons">
-                    <a href="#">Contact Us</a>
+                    <a href="tel:+918591932303">Contact Us</a>
                     <button class="bookNow">Inquire Now</button>
                 </div>
                 <div class="itinerary">
@@ -370,7 +378,7 @@
                     <p class="dept">Departure <span>10 Nov, 13 Nov, 16 Nov, 29 Dec 2023</span></p>
                 </div>
                 <div class="buttons">
-                    <a href="#">Contact Us</a>
+                    <a href="tel:+918591932303">Contact Us</a>
                     <button class="bookNow">Inquire Now</button>
                 </div>
                 <div class="itinerary">
@@ -436,7 +444,7 @@
                     <p class="dept">Departure <span>24 Nov, 01 Dec, 08 Dec, 15 Dec 2023</span></p>
                 </div>
                 <div class="buttons">
-                    <a href="#">Contact Us</a>
+                    <a href="tel:+918591932303">Contact Us</a>
                     <button class="bookNow">Inquire Now</button>
                 </div>
                 <div class="itinerary">
@@ -508,7 +516,7 @@
                     <p class="dept">Departure <span>19 Nov, 10 Dec 2023</span></p>
                 </div>
                 <div class="buttons">
-                    <a href="#">Contact Us</a>
+                    <a href="tel:+918591932303">Contact Us</a>
                     <button class="bookNow">Inquire Now</button>
                 </div>
                 <div class="itinerary">
@@ -588,7 +596,7 @@
                     <p class="dept">Departure <span>26 Nov, 24 Dec 2023</span></p>
                 </div>
                 <div class="buttons">
-                    <a href="#">Contact Us</a>
+                    <a href="tel:+918591932303">Contact Us</a>
                     <button class="bookNow">Inquire Now</button>
                 </div>
                 <div class="itinerary">
@@ -798,8 +806,8 @@
         </div>
     </div>
     <div class="popup">
-        <a href="#"><img src="./images/message.png" alt=""></a>
-        <a href="#"><img src="./images/call.png" alt=""></a>
+        <a href="mailto:shilpa@theholidaystore.in"><img src="./images/message.png" alt=""></a>
+        <a href="tel:+918591932303"><img src="./images/call.png" alt=""></a>
         <a href="#"><img src="./images/wapp.png" alt=""></a>
     </div>
     <div class="contact" id="contactUs">
@@ -809,18 +817,24 @@
             <div class="contact-text">
                 <h2>Get in touch with us</h2>
                 <p>To make your seacation safe and memorable! </p>
-                <form action="" class="form">
+                <form action="" class="form myForm">
                     <input type="text" placeholder="Enter your name*" required />
                     <input type="email" id="" placeholder="Enter your email">
-                    <input type="text" placeholder="Enter your Phone number*" required />
 
-                    <input type="number" placeholder="Enter OTP*" />
+
+                    <input type="text" name="phone" id="phoneNumber" placeholder="Enter your Phone number*" required
+                        class="phoneNum" />
+
+
+
+
                 </form>
-                <button class="cta-button">Submit</>
+                <button class="cta-button">Submit</button>
+
             </div>
         </div>
     </div>
-    <footer class="footer">
+    <footer class=" footer">
         <img src="./images/logo.png" alt="">
         <div class="address">
             <h3>Contact</h3>
@@ -828,8 +842,8 @@
             <!-- <p class="add">Costa Cruise,
                 Fira, Santorini, 84700
                 Greece</p> -->
-            <p>Tel: +91 85475 25475</p>
-            <p>Tel: +91 85475 25475</p>
+            <a href="tel:+918591932303">Tel: +918591932303</a>
+
         </div>
         <div class="links">
             <h3>Quick Links</h3>
@@ -860,19 +874,21 @@
         <img src="./images/logo2.png" alt="" class="logo2">
         <p class="form-p">Don't Miss The Chance</p>
         <p class="form-pp">Explore a new world of ecstasy and fun with us</p>
-        <form class="form-field">
-            <input type="text" name="name" placeholder="Enter your name*">
-            <input type="email" name="email" placeholder="Enter your email">
-            <input type="text" name="phone" placeholder="Enter your phone number*">
-            <input type="number" name="otp" placeholder="Enter OTP*">
-            <button type="submit" class="form-sub-button">Submit</button>
+        <form class="form-field myForm">
+            <input type="text" name="name" id="name" placeholder="Enter your name*">
+            <input type="email" name="email" id="email" placeholder="Enter your email">
+            <input type="text" id="phone" placeholder="Enter your phone number*">
+            <button type="submit" class="form-sub-button" onclick="sendMail()">Submit</button>
         </form>
     </div>
 
 
 
 
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="script.js"></script>
+
+
 </body>
 
 </html>

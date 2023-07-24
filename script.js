@@ -2,10 +2,10 @@ const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
 
 menuToggle.addEventListener("click", () => {
-  if (menu.style.display === "none") {
-    menu.style.display = "block";
+  if (menu.style.visibility === "visible") {
+    menu.style.visibility = "hidden";
   } else {
-    menu.style.display = "none";
+    menu.style.visibility = "visible";
   }
 });
 

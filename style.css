@@ -750,6 +750,14 @@ body {
     width: 110%;
   }
 
+  .footer-form button{
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
 
   .footer a{
     color: #ffff;
@@ -1141,8 +1149,16 @@ footer{
 
 .footer-form input{
   width: 70%;
+  font-size: 16px;
   border-bottom-right-radius: 0px ;
   border-top-right-radius: 0px ;
+}
+
+.footer-form button{
+  border: none;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .popup-form {

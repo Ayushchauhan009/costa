@@ -847,9 +847,9 @@
         <div class="call">
             <h3>Get a Call back</h3>
             <div class="lineTwo"></div>
-            <form class="footer-form">
-                <input type="text" placeholder="Enter your Phone number" />
-                <a class="submit-button" href="#">Submit</a>
+            <form class="footer-form" onsubmit="submitForm(event)">
+                <input type="text" id="phoneNumberInput" placeholder="Enter your Phone number" />
+                <button type="submit" class="submit-button">Submit</button>
             </form>
         </div>
     </footer>

@@ -25,6 +25,36 @@ function sendMail(event, formId) {
     })
     .catch((err) => console.log(err));
 }
+function submitForm(event) {
+  event.preventDefault();
+
+  const phoneNumber = document.getElementById("phoneNumberInput").value;
+
+  const fullPhoneNumber = "+91" + phoneNumber;
+
+  sendFullPhoneNumberToEmailJS(fullPhoneNumber);
+
+  document.getElementById("phoneNumberInput").value = "";
+}
+
+function sendFullPhoneNumberToEmailJS(fullPhoneNumber) {
+  const serviceID = "service_costa";
+  const templateID = "template_0fysdrd";
+
+  const params = {
+    phone_number: fullPhoneNumber,
+  };
+
+  emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+      alert("Mobile Number received successfully!");
+      console.log("Full phone number sent successfully via EmailJS!");
+    })
+    .catch((err) => {
+      console.log("Error sending full phone number via EmailJS:", err);
+    });
+}
 
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");

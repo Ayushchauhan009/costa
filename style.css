@@ -89,13 +89,6 @@ body {
     background-image: url("./images/image2.png");
     }
 
-.overlay-slide{
-  color: rgba(1, 113, 163, 1);
-  opacity: 0.5;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-}
 
 
 .slide3 {
@@ -800,6 +793,7 @@ body {
   color: rgba(1, 113, 163, 1);
   font-size: 28px;
   margin:10px 0;
+  font-weight: 600;
 }
 
 .form-field input{
@@ -857,8 +851,9 @@ body {
   margin-top: 10px;
   margin-bottom: 5px;
   font-size: 16px;
+  text-align: center;
   color: rgba(1, 113, 163, 1);
-  margin-left: 40px;
+  /* margin-left: 40px; */
 }
 
 
@@ -993,7 +988,7 @@ body {
   display: flex;
   align-items: center;
   margin: 10px;
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 
 .testimonial {
@@ -1059,9 +1054,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-
-
 
 .contact-text{
   margin-left: 0px;

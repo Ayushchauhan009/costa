@@ -6,13 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Costa Cruises</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("iZhMWi5i--Xfk7Kq-");
-        })();
-    </script>
+
 </head>
 
 <body>
@@ -817,19 +811,13 @@
             <div class="contact-text">
                 <h2>Get in touch with us</h2>
                 <p>To make your seacation safe and memorable! </p>
-                <form action="" class="form myForm">
-                    <input type="text" placeholder="Enter your name*" required />
-                    <input type="email" id="" placeholder="Enter your email">
+                <form class="form myForm" id="form1" onsubmit="sendMail(event, 'form1')">
+                    <input type="text" name="myName" class="myName" placeholder="Enter Your Name" required>
+                    <input type="tel" name="myPhone" class="myPhone" placeholder="Enter Your Phone" required>
+                    <input type="email" name="myEmail" class="myEmail" placeholder="Enter Your Email">
 
-
-                    <input type="text" name="phone" id="phoneNumber" placeholder="Enter your Phone number*" required
-                        class="phoneNum" />
-
-
-
-
+                    <button type="submit" class="cta-button">Submit</button>
                 </form>
-                <button class="cta-button">Submit</button>
 
             </div>
         </div>
@@ -874,18 +862,25 @@
         <img src="./images/logo2.png" alt="" class="logo2">
         <p class="form-p">Don't Miss The Chance</p>
         <p class="form-pp">Explore a new world of ecstasy and fun with us</p>
-        <form class="form-field myForm">
-            <input type="text" name="name" id="name" placeholder="Enter your name*">
-            <input type="email" name="email" id="email" placeholder="Enter your email">
-            <input type="text" id="phone" placeholder="Enter your phone number*">
-            <button type="submit" class="form-sub-button" onclick="sendMail()">Submit</button>
+        <form class="form-field myForm" id="form2" onsubmit="sendMail(event, 'form2')">
+            <input type="text" name="myName" class="myName" placeholder="Enter Your Name" required>
+            <input type="tel" name="myPhone" class="myPhone" placeholder="Enter Your Phone" required>
+            <input type="email" name="myEmail" class="myEmail" placeholder="Enter Your Email">
+
+            <button type="submit" class="form-sub-button">Submit</button>
         </form>
     </div>
 
 
 
 
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("fgikhuYcvDJTepU_7");
+        })();
+    </script>
     <script src="script.js"></script>
 
 

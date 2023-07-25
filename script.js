@@ -1,20 +1,30 @@
-function sendMail() {
+function sendMail(event, formId) {
+  event.preventDefault();
+
+  const myName = document.querySelector(`#${formId} .myName`).value;
+  const myEmail = document.querySelector(`#${formId} .myEmail`).value;
+  const myPhone = document.querySelector(`#${formId} .myPhone`).value;
+
   const params = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    phone: document.getElementById("phoneNumber").value,
+    from_name: myName,
+    from_email: myEmail,
+    from_phone: myPhone,
   };
 
-  const serviceID = "service_costa";
-  const templateID = "template_jfn1sha";
+  const serviceID = "service_costa"; // Replace with your EmailJS service ID
+  const templateID = "template_jfn1sha"; // Replace with your EmailJS template ID
 
   emailjs
     .send(serviceID, templateID, params)
     .then((res) => {
-      (document.getElementById("name").value = ""),
-        (document.getElementById("email").value = ""),
-        (document.getElementById("phoneNumber").value = ""),
-        alert("Your query received successfully");
+      // Form submitted successfully, redirect to another HTML page or perform other actions
+      if (formId === "form1") {
+        // Redirect to a specific page for form1
+        window.location.href = "./thankyou.html";
+      } else if (formId === "form2") {
+        // Redirect to a specific page for form2
+        window.location.href = "./thankyou.html";
+      }
     })
     .catch((err) => console.log(err));
 }
@@ -30,6 +40,10 @@ menuToggle.addEventListener("click", () => {
   }
 });
 
+// const serviceID = "";
+//
+//
+
 const sliderInner = document.querySelector(".slider-inner");
 const slides = document.querySelectorAll(".slide");
 const slideCount = slides.length;
@@ -37,6 +51,7 @@ let currentIndex = 0;
 let interval;
 
 function startSlider() {
+  goToSlide(0);
   interval = setInterval(() => {
     goToSlide(currentIndex + 1);
   }, 8000);

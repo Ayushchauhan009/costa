@@ -1119,7 +1119,7 @@ body {
 .popup {
   position: fixed;
   top: 60%; /* Adjust the top position as needed */
-  right: 10px; /* Adjust the right position as needed */
+  right: 8px; /* Adjust the right position as needed */
   transform: translateY(-10%); /* Center the container vertically */
   display: flex;
   z-index: 10;
@@ -1128,7 +1128,7 @@ body {
 }
 
 .popup button{
-  right: 7px;}
+  right: 8px;}
 
 footer{
   height: 80vh;

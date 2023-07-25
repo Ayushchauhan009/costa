@@ -941,7 +941,7 @@ body {
 
   .grid h1{
     font-size: 22px;
-    margin-top: 45px ;
+    margin-top: 105px ;
   }
 
 .tag{
@@ -984,11 +984,26 @@ body {
 }
 
 
+
+.testimonial.active {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Show all testimonials on mobile devices */
+.testimonial.hidden {
+  display: block;
+}
+
+
 .testimonials-container {
-  display: flex;
-  align-items: center;
-  margin: 10px;
-  overflow-x: scroll;
+  height: 400px; 
+  width: 70%;
+  
+  overflow-x: scroll ;
+  overflow-y: hidden;
+  
 }
 
 .testimonial {
@@ -996,9 +1011,9 @@ body {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  padding: 20px 70px;
+  padding: 50px 150px;
   background-color: #fff;
-  width: auto;
+  width: 100%;
   opacity: 1;
   align-items: center;
   filter: drop-shadow(0 0px 10px rgba(0, 0, 0, 0.1));
@@ -1083,6 +1098,7 @@ body {
 }
 .contact-box button{
   margin-left: 6%;
+  width: 88%;
 }
 .popup {
   position: fixed;
@@ -1194,6 +1210,17 @@ footer{
   cursor: pointer;
 }
 
+}
+
+
+.popup button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 30px;
 }
 
 .menu-toggle {

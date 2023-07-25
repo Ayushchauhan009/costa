@@ -11,18 +11,15 @@ function sendMail(event, formId) {
     from_phone: myPhone,
   };
 
-  const serviceID = "service_costa"; // Replace with your EmailJS service ID
-  const templateID = "template_jfn1sha"; // Replace with your EmailJS template ID
+  const serviceID = "service_costa";
+  const templateID = "template_jfn1sha";
 
   emailjs
     .send(serviceID, templateID, params)
     .then((res) => {
-      // Form submitted successfully, redirect to another HTML page or perform other actions
       if (formId === "form1") {
-        // Redirect to a specific page for form1
         window.location.href = "./thankyou.html";
       } else if (formId === "form2") {
-        // Redirect to a specific page for form2
         window.location.href = "./thankyou.html";
       }
     })
@@ -39,10 +36,6 @@ menuToggle.addEventListener("click", () => {
     menu.style.visibility = "visible";
   }
 });
-
-// const serviceID = "";
-//
-//
 
 const sliderInner = document.querySelector(".slider-inner");
 const slides = document.querySelectorAll(".slide");
@@ -113,17 +106,15 @@ playButton.addEventListener("click", () => {
   }
 });
 
-let buttonIcon; // Declare the buttonIcon variable outside the toggleDropdown() function
+let buttonIcon;
 
 function toggleDropdown(button) {
   const item = button.closest(".item");
   const dropdownContent = item.querySelector(".dropdown-content");
   dropdownContent.classList.toggle("show");
 
-  // Get the button icon element
   buttonIcon = button.querySelector(".button-icon");
 
-  // Toggle the icon based on the dropdown visibility
   if (dropdownContent.classList.contains("show")) {
     buttonIcon.src = "./images/cancel.png";
   } else {
@@ -137,20 +128,19 @@ document.addEventListener("click", (event) => {
   dropdownContents.forEach((dropdownContent) => {
     const item = dropdownContent.closest(".item");
     const button = item.querySelector(".expand-button");
-    const buttonIcon = button.querySelector(".button-icon"); // Get the button icon element
+    const buttonIcon = button.querySelector(".button-icon");
 
     if (
       !button.contains(event.target) &&
       dropdownContent.classList.contains("show")
     ) {
       dropdownContent.classList.remove("show");
-      buttonIcon.src = "./images/arrowsmall.png"; // Set the icon back to the initial state when the dropdown is closed
+      buttonIcon.src = "./images/arrowsmall.png";
     }
   });
 });
-// With this change, the buttonIcon variable is accessible within both functions, and the button icon should now change appropriately when the dropdown content is shown or hidden.
 
-function initializeTestimonials() {
+function initializeTestimonialsForLargerScreens() {
   const testimonials = document.querySelectorAll(".testimonial");
   testimonials.forEach((testimonial, index) => {
     if (index < 3) {
@@ -169,7 +159,9 @@ function initializeTestimonials() {
   });
 }
 
-// Rest of the code...
+if (window.innerWidth >= 768) {
+  initializeTestimonialsForLargerScreens();
+}
 
 function showNext() {
   const testimonialsContainer = document.querySelector(
@@ -182,11 +174,10 @@ function showNext() {
     testimonials[0]
   );
 
-  // Show the fourth testimonial and hide the first testimonial
   testimonials[3].classList.remove("hidden");
   testimonials[0].classList.add("hidden");
 
-  initializeTestimonials();
+  initializeTestimonialsForLargerScreens();
 }
 
 function showPrevious() {
@@ -197,31 +188,26 @@ function showPrevious() {
 
   testimonialsContainer.appendChild(testimonials[0]);
 
-  // Show the fourth testimonial and hide the first testimonial
   testimonials[3].classList.remove("hidden");
   testimonials[0].classList.add("hidden");
 
-  initializeTestimonials();
+  initializeTestimonialsForLargerScreens();
 }
 
 function toggleItinerary(button) {
   const item = button.closest(".item");
   const itineraryDetails = item.querySelector(".itinerary-details");
 
-  // Toggle the .flipped class on the item
   item.classList.toggle("flipped");
 
-  // Toggle the .hide class for the itinerary details
   itineraryDetails.classList.toggle("hide");
 
-  // Close other open itinerary details
   closeItinerary(item);
 }
 
 function closeItinerary(exceptItem) {
   const items = document.querySelectorAll(".item");
 
-  // Close all itinerary details and remove the .flipped class from all items except the clicked one
   items.forEach((item) => {
     if (item !== exceptItem) {
       item.classList.remove("flipped");
@@ -232,13 +218,11 @@ function closeItinerary(exceptItem) {
     }
   });
 }
-// Get all the book now buttons, the close button, and the popup form element
-// Your existing JavaScript code
+
 const bookNowButtons = document.querySelectorAll(".bookNow");
 const closeButton = document.getElementById("closeButton");
 const popupForm = document.getElementById("popupForm");
 
-// Function to toggle the popup form display
 function togglePopupForm() {
   if (popupForm.style.display === "block") {
     popupForm.style.display = "none";
@@ -247,28 +231,19 @@ function togglePopupForm() {
   }
 }
 
-// Event listener for all book now buttons to open the popup form
 bookNowButtons.forEach((button) => {
   button.addEventListener("click", togglePopupForm);
 });
 
-// Event listener for the close button to close the popup form
 closeButton.addEventListener("click", togglePopupForm);
 
-// Function to open the popup form after a specific time (e.g., 5000ms = 5 seconds)
 function openPopupAfterTime(time) {
   setTimeout(() => {
     popupForm.style.display = "block";
   }, time);
 }
 
-// Function to open the popup form when the user reaches a specific height of the page (e.g., 500px from the top)
-
-// Call the functions to open the popup form after 5 seconds and at 500px height
-openPopupAfterTime(20000); // Open after 5 seconds (5000ms)
-// Open when the user scrolls to 500px height
-
-// Smooth scrolling for anchor links
+openPopupAfterTime(20000);
 const navLinks = document.querySelectorAll(".menu a");
 
 navLinks.forEach((link) => {
@@ -276,7 +251,7 @@ navLinks.forEach((link) => {
     event.preventDefault();
     const targetId = link.getAttribute("href");
     const targetSection = document.querySelector(targetId);
-    const headerOffset = 60; // Adjust this value if you have a fixed header
+    const headerOffset = 60;
     const elementPosition = targetSection.getBoundingClientRect().top;
     const offsetPosition = elementPosition - headerOffset;
 
@@ -285,77 +260,13 @@ navLinks.forEach((link) => {
       behavior: "smooth",
     });
 
-    // Close the menu on mobile devices after clicking a link
     const menu = document.querySelector(".menu");
     menu.classList.remove("active");
   });
 });
 
-// let currentTestimonial = 1;
-// const totalTestimonials = 4; // Change this to the total number of testimonials
-// let isMobile = false;
-// let scrollInterval;
-
-// function showTestimonial(n) {
-//   const testimonials = document.getElementsByClassName("testimonial");
-//   if (n < 1) {
-//     currentTestimonial = totalTestimonials;
-//   } else if (n > totalTestimonials) {
-//     currentTestimonial = 1;
-//   }
-
-//   for (let i = 0; i < testimonials.length; i++) {
-//     testimonials[i].classList.add("hidden");
-//   }
-
-//   document
-//     .getElementById("testimonial" + currentTestimonial)
-//     .classList.remove("hidden");
-// }
-
-// function showNext() {
-//   currentTestimonial++;
-//   showTestimonial(currentTestimonial);
-// }
-
-// function showPrevious() {
-//   currentTestimonial--;
-//   showTestimonial(currentTestimonial);
-// }
-
-// function startAutoScrollMobile() {
-//   if (isMobile) {
-//     scrollInterval = setInterval(showNext, 5000); // Change 5000 to the desired interval in milliseconds (e.g., 5000 for 5 seconds)
-//   }
-// }
-
-// function stopAutoScrollMobile() {
-//   clearInterval(scrollInterval);
-// }
-
-// function detectMobileDevice() {
-//   isMobile = window.matchMedia("(max-width: 767px)").matches;
-// }
-
-// // Call the function to detect mobile devices
-// detectMobileDevice();
-
-// // Start auto-scroll on mobile devices when the page loads
-// startAutoScrollMobile();
-
-// // Stop auto-scroll on touch (to prevent scrolling while the user interacts with testimonials)
-// document
-//   .querySelector(".testimonials-container")
-//   .addEventListener("touchstart", function () {
-//     if (isMobile) {
-//       stopAutoScrollMobile();
-//     }
-//   });
-
-// document
-//   .querySelector(".testimonials-container")
-//   .addEventListener("touchend", function () {
-//     if (isMobile) {
-//       startAutoScrollMobile();
-//     }
-//   });
+function openWhatsApp(phoneNumber) {
+  const message = "";
+  const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+  window.open(whatsappURL, "_blank");
+}

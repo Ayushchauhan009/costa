@@ -146,7 +146,7 @@ function initializeTestimonialsForLargerScreens() {
     if (index < 3) {
       testimonial.classList.remove("hidden");
       testimonial.classList.add("blur");
-      if (index === 1) {
+      if (index === 1 && window.innerWidth >= 768) {
         testimonial.classList.remove("blur");
         testimonial.style.transform = "scale(1)";
       } else {
